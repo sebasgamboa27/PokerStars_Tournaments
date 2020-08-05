@@ -1,0 +1,41 @@
+<app-nav-bar></app-nav-bar>
+
+<h1 id="header">Player Rankings</h1>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col"><i class="fas fa-medal"></i></th>
+      <th scope="col">Name</th>
+      <th scope="col">Money</th>
+      <th scope="col">Wins</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of players; let i = index" [attr.data-index]="i" id="cells">
+      <th scope="row">{{i+1}}</th>
+      <td>{{player.Name}}</td>
+      <td>{{player.Money}}</td>
+      <td>{{player.Wins}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="header2">Tournaments</h1>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col"><i class="fas fa-trophy"></i></th>
+      <th scope="col">Name</th>
+      <th scope="col">Money Pool</th>
+      <th scope="col">Winner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tourney of tournaments; let i = index" [attr.data-index]="i" id="cells2">
+      <th scope="row">{{i+1}}</th>
+      <td>{{tourney.Name}}</td>
+      <td>{{tourney.Money}}</td>
+      <td>{{tourney.Winner}}</td>
+    </tr>
+  </tbody>
+</table>

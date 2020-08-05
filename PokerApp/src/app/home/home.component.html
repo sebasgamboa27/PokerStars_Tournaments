@@ -1,0 +1,11 @@
+<app-nav-bar (status)="changeStatus()"></app-nav-bar>
+
+<div class="container mt-5">
+  <span *ngIf="navBarStatus"><h1 class="animate__animated animate__lightSpeedInRight">Poker Stars Home</h1></span> 
+</div>
+
+<div class="row">
+  <div *ngFor="let player of players" class="col-3">
+    <app-player-card [player]="player"></app-player-card>
+  </div>
+</div>

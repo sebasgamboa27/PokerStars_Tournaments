@@ -1,0 +1,66 @@
+<app-nav-bar></app-nav-bar>
+<div class="row" id=cont>
+  <form id="form1" class="col-6">
+    <h1>New Tournament</h1>
+    <div class="form-group">
+      <label for="Name">Name</label>
+      <input type="Name" [(ngModel)]="Name" name="Name" class="form-control" id="Name" aria-describedby="namehelp">
+      <small id="namehelp" class="form-text text-muted">Make the name unique!</small>
+    </div>
+    <div class="form-group">
+      <label for="Date">Date</label>
+      <input type="Date" [(ngModel)]="Date" name="Date" class="form-control" id="Date">
+    </div>
+    <button type="submit" class="btn btn-danger" (click)="insertTournament()">Create New Tournament</button>
+  </form>
+
+  <form id="form2" class="col-6">
+    <h1>Add Participant</h1>
+    <label for="dropdownMenuButton">Tournament</label>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{currentTournament?.Name}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button *ngFor="let tournament of tournaments" class="dropdown-item" type="button" 
+        (click)="changeTournament(tournament)">{{tournament.Name}}</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="PlayerName">Name</label>
+      <input type="PlayerName" [(ngModel)]="PlayerName" name="PlayerName" class="form-control" id="PlayerName" aria-describedby="namehelp">
+    </div>
+    <div class="form-group">
+      <label for="Money">Money</label>
+      <input type="Money" [(ngModel)]="Money" name="Money" class="form-control" id="Money" aria-describedby="namehelp">
+      <small id="namehelp" class="form-text text-muted">Enter the money used by the participant</small>
+    </div>
+    <button type="submit" class="btn btn-danger" (click)="insertParticipant()">Add a participant</button>
+  </form>
+</div>
+
+<form class="mb-4">
+  <h1 id="winnerForm">Add Winners</h1>
+  <label for="dropdownMenuButton">Tournament</label>
+  <div class="dropdown" id="winnerForm2">
+    <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{currentTournament?.Name}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <button *ngFor="let tournament of tournaments" class="dropdown-item" type="button" 
+      (click)="changeTournament(tournament)">{{tournament.Name}}</button>
+    </div>
+  </div>
+  <div class="form-group" id="winnerForm3">
+    <label for="FirstPlace">First Place</label>
+    <input type="FirstPlace" [(ngModel)]="FirstPlace" name="FirstPlace" class="form-control" id="FirstPlace">
+  </div>
+  <div class="form-group" id="winnerForm4">
+    <label for="SecondPlace">Second Place</label>
+    <input type="SecondPlace" [(ngModel)]="SecondPlace" name="SecondPlace" class="form-control" id="SecondPlace">
+  </div>
+  <button type="submit" class="btn btn-danger" (click)="insertWinners()">Add Winners</button>
+</form>
+
+
+
