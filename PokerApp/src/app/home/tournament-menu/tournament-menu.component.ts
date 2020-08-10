@@ -21,16 +21,34 @@ export class TournamentMenuComponent implements OnInit {
   @Input() FirstPlace: string;
   @Input() SecondPlace: string;
 
+  successAlert: boolean;
+  timeLeft: number = 10;
+  interval;
+
   constructor(private database: DatabaseService) { }
 
   async ngOnInit(): Promise<void> {
     this.tournaments = await this.database.getTournaments();
+    this.successAlert = false;
   }
 
   async insertTournament(){
     console.log(this.Date.toString());
     await this.database.insertTournament(this.Name,this.Date.toString());
     this.tournaments = await this.database.getTournaments();
+    this.startTimer();
+    
+  }
+
+  startTimer() {
+    this.successAlert = true;
+    this.interval = setInterval(() => {
+      if(this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.successAlert = false;
+      }
+    },1000)
   }
 
   async insertParticipant(){
@@ -43,6 +61,8 @@ export class TournamentMenuComponent implements OnInit {
     await this.database.updateTournamentMoney(this.currentTournament.ID,this.Money);
 
     this.tournaments = await this.database.getTournaments();
+
+    this.startTimer();
   
   }
 
@@ -65,6 +85,8 @@ export class TournamentMenuComponent implements OnInit {
 
     await this.database.updatePlayersMoney(ID1[0].ID,first.toString());
     await this.database.updatePlayersMoney(ID2[0].ID,second.toString());
+
+    this.startTimer();
 
   }
 

@@ -1,14 +1,13 @@
 <div class="card mb-3 mb-3">
   <img src= "{{ player.ImageURL }}" class="card-img-top">
   <div class="card-body">
-    <h5 class="card-title">
+    <h5 class="card-title" style="color: #170c30;">
       {{ player.Name }}
     </h5>
-    <p class="card-text">
+    <p class="card-text" style="color: #170c30;">
       Balance: {{ player.Money }}<br>
     </p>
-    <button type="button" class="btn btn-danger animate__animated animate__heartBeat popup" (click)="showPopUp()">More Info
-      <span class="popuptext" id="myPopup">Popup text...</span>
+    <button type="button" class="btn btn-danger animate__animated animate__heartBeat popup">More Info
     </button>
   </div>
 </div>

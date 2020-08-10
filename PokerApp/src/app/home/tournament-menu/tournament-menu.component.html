@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+<span *ngIf="successAlert"><nb-alert status="success" closable>You have been successfully authenticated!</nb-alert></span>
 <div class="row" id=cont>
   <form id="form1" class="col-6">
     <h1>New Tournament</h1>
@@ -61,6 +61,7 @@
   </div>
   <button type="submit" class="btn btn-danger" (click)="insertWinners()">Add Winners</button>
 </form>
+
 
 
 

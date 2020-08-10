@@ -1,16 +1,6 @@
-<nav class="menu-opener" (click)="changeStatus()">
-  <div class="menu-opener-inner"></div>
-</nav>
-<nav class="menu">
-  <ul class="menu-inner">
-    <a href="" class="menu-link">
-      <li>Home</li>
-    </a>
-    <a href="tourney" class="menu-link">
-      <li>Tournaments</li>
-    </a>
-    <a href="stats" class="menu-link">
-      <li>Statistics</li>
-    </a>
-  </ul>
-</nav>
+
+<nb-actions size="giant">
+  <nb-action (click)="goHome()" href=""><i class="fas fa-home"></i> &nbsp; Home</nb-action>
+  <nb-action (click)="goTourneys()" href="tourney"><i class="fas fa-trophy"></i> &nbsp; Tournaments </nb-action>
+  <nb-action (click)="goStats()" href="stats"><i class="fas fa-table"></i> &nbsp; Statistics</nb-action>
+</nb-actions>

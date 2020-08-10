@@ -9,19 +9,13 @@ import { createPopper } from '@popperjs/core';
 })
 export class PlayerCardComponent implements OnInit {
 
-  popUpStatus: boolean;
 
   @Input() player: Player;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.popUpStatus = false;
   }
 
-  showPopUp(){
-    let popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
 
 }

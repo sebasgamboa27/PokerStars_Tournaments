@@ -10,6 +10,9 @@ import { PlayerCardComponent } from './home/player-card/player-card.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TournamentMenuComponent } from './home/tournament-menu/tournament-menu.component';
 import { StatisticsMenuComponent } from './home/statistics-menu/statistics-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbAlertModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,14 @@ import { StatisticsMenuComponent } from './home/statistics-menu/statistics-menu.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'dark' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    NbActionsModule,
+    NbIconModule,
+    NbAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]
