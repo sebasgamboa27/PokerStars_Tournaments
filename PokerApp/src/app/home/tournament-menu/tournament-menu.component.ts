@@ -41,6 +41,7 @@ export class TournamentMenuComponent implements OnInit {
   }
 
   startTimer() {
+    this.timeLeft = 10;
     this.successAlert = true;
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {

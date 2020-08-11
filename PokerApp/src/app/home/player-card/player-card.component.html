@@ -7,7 +7,9 @@
     <p class="card-text" style="color: #170c30;">
       Balance: {{ player.Money }}<br>
     </p>
-    <button type="button" class="btn btn-danger animate__animated animate__heartBeat popup">More Info
+    <button nbButton [nbPopover]="component" nbPopoverTrigger="click" nbPopoverPlacement="bottom" type="button" class="btn btn-danger animate__animated animate__heartBeat"
+    (click)="setInfo()">More Info
     </button>
   </div>
 </div>
+

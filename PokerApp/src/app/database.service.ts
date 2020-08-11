@@ -55,6 +55,10 @@ export class DatabaseService {
     return await this.http.post<any>('http://localhost:3000/getWins',{PlayerID:PlayerID}).toPromise();
   }
 
+  async getParticipations(PlayerID: string) {
+    return await this.http.post<any>('http://localhost:3000/getParticipations',{PlayerID:PlayerID}).toPromise();
+  }
+
   async getTournamentWinner(TournamentID: string) {
     return await this.http.post<any>('http://localhost:3000/getTournamentWinner',{TournamentID:TournamentID}).toPromise();
   }

@@ -11,8 +11,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TournamentMenuComponent } from './home/tournament-menu/tournament-menu.component';
 import { StatisticsMenuComponent } from './home/statistics-menu/statistics-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbAlertModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbAlertModule, NbPopoverModule, NbCardModule, NbListModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { InfoListComponent } from './home/info-list/info-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     PlayerCardComponent,
     NavBarComponent,
     TournamentMenuComponent,
-    StatisticsMenuComponent
+    StatisticsMenuComponent,
+    InfoListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,10 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbEvaIconsModule,
     NbActionsModule,
     NbIconModule,
-    NbAlertModule
+    NbAlertModule,
+    NbPopoverModule,
+    NbCardModule,
+    NbListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

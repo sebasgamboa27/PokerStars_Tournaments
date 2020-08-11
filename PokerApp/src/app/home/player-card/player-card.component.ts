@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, TemplateRef} from '@angular/core';
 import { Player } from 'src/interfaces/Player';
-import { createPopper } from '@popperjs/core';
+import { InfoListComponent } from '../info-list/info-list.component';
+import { NbPopoverDirective } from '@nebular/theme';
+import { PlayerInfoService } from '../player-info.service';
 
 @Component({
   selector: 'app-player-card',
@@ -9,12 +11,20 @@ import { createPopper } from '@popperjs/core';
 })
 export class PlayerCardComponent implements OnInit {
 
+  @ViewChild(NbPopoverDirective) popover: NbPopoverDirective;
 
+  listComponent = InfoListComponent;
+  component: any = this.listComponent;
+  
   @Input() player: Player;
 
-  constructor() { }
+  constructor(private playerInfo: PlayerInfoService) { }
 
   ngOnInit(): void {
+  }
+
+  setInfo(){
+    this.playerInfo.setPlayer(this.player);
   }
 
 

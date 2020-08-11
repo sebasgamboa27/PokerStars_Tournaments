@@ -75,6 +75,17 @@ app.post('/getWins', async function (req, res) {
   res.send(result.recordset);
 });
 
+app.post('/getParticipations', async function (req, res) {
+  await sql.connect(dbConnString);
+
+  const PlayerID = req.body.PlayerID;
+  
+  const result = await sql.query(`SELECT COUNT(*) FROM Participations WHERE PlayerID = ${PlayerID}`);                
+
+  res.send(result.recordset);
+});
+
+
 app.post('/getTournamentWinner', async function (req, res) {
   await sql.connect(dbConnString);
 
