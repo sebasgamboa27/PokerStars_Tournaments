@@ -79,8 +79,8 @@ export class TournamentMenuComponent implements OnInit {
     let money = this.currentTournament.Money;
     let temp = parseInt(money);
     
-    let first = (temp/4)*3;
-    let second = (temp/4);
+    let first = (temp/3)*2;
+    let second = (temp/3);
 
     debugger;
 
