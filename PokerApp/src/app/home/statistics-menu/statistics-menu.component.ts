@@ -30,6 +30,8 @@ export class StatisticsMenuComponent implements OnInit {
       this.getWinsbyTourney(tourney);
     });
 
+    this.tournaments = this.tournaments.reverse();
+
   }
 
   compare( a:Player, b:Player ) {
