@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PokerApp"
+    }
+  },
+  "defaultProject": "PokerApp",
+  "cli": {
+    "analytics": "55f1e799-0f39-4552-ae8d-ef90cefbfc21"
+  }
 }
